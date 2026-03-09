@@ -1,118 +1,275 @@
 # Enginerig – Camera Rig Weight & Load Calculator (Balance, Mount Stress, Node Analysis)
 
-**Enginerig** is a desktop camera rig weight calculator and load analysis tool for videographers, cinematographers, and camera operators.
+**Enginerig** is a desktop application for **engineering analysis of camera rigs**.
 
-It helps you calculate:
+It helps filmmakers, photographers, and rig builders calculate:
 
-- Camera rig balance and center of mass
-- Load on mounts, quick releases, hot shoe adapters, and articulating arms
-- Perceived weight (operator fatigue model)
-- Monopod and connector stress
-- Rig imbalance in grams and percent
-- Inertia-adjusted load for fast walking
+- total rig weight  
+- center of mass  
+- perceived operator load  
+- rig imbalance  
+- load on mounting points and joints  
 
-Enginerig simulates real-world mechanical stress in camera setups including camera, lens, monopod, counterweights, connectors, and mounting nodes.
+The program allows you to visually build a rig scheme and instantly see how weight distribution affects the operator and equipment.
 
-This tool is designed for camera rig builders, documentary operators, event videographers, and anyone who wants to analyze rig safety and balance before shooting.
+This tool is useful for anyone asking questions like:
 
----
+- **How to calculate load on a camera rig?**
+- **How to calculate center of mass of a camera setup?**
+- **How to balance a handheld camera rig?**
+- **How to estimate operator fatigue from a camera rig?**
+- **How much weight can a quick-release or joint handle?**
 
-## What problem does it solve?
-
-Modern camera rigs often overload:
-
-- Hot shoe mounts  
-- Quick release plates  
-- 1/4" threads  
-- Articulating arms  
-- Monopod connections  
-
-Manufacturers list static load limits, but real shooting involves dynamic movement, inertia, and torque.  
-Enginerig calculates effective load with a +40% inertia factor to simulate fast walking and real operating conditions.
+Enginerig provides a **visual engineering model** to answer these questions.
 
 ---
 
-## Core Features
+# What Enginerig Does
 
-- **Camera rig balance calculator** — center of mass and imbalance percentage  
-- **Node load analysis** — color-coded stress levels (safe / moderate / overload)  
-- **Mount stress simulation** — quick release, hot shoe, threaded mounts  
-- **Perceived weight model** — hybrid biomechanical operator fatigue estimation  
-- **Monopod load simulation** — connector length and torque influence  
-- **Rig schematic editor** — visual point/connector/node modeling  
-- **.rig project format** — save and load custom setups  
-- **Export** — JPG (FHD) and vector PDF  
-- **Multilingual UI** — 11 languages  
+Enginerig analyzes filming rigs such as:
 
----
+- camera + lens setups  
+- monopod rigs  
+- handheld rigs  
+- documentary shooting rigs  
+- custom camera mounting systems  
 
-## Who is it for?
+The program calculates:
 
-- Documentary camera operators  
-- Event videographers  
-- Steadicam and monopod users  
-- Camera rig engineers  
-- Cinematographers  
-- Broadcast technicians  
-- Gear reviewers  
+- **Total rig mass**
+- **Center of mass**
+- **Rig imbalance**
+- **Operator perceived weight**
+- **Load on nodes (mounts, joints, quick releases)**
+- **Estimated operator working time**
+
+The rig is built interactively on a canvas using points, connectors and nodes.
 
 ---
 
-## Keywords
+# Key Features
 
-camera rig calculator, camera rig weight calculator, rig balance tool, camera mount stress analysis, monopod load calculator, quick release load, hot shoe stress test, perceived weight calculator, camera operator fatigue tool
----
+### Visual rig builder
 
-## Download
+Create a rig structure by placing:
 
-Get the latest **Windows (x64) build** from the [Releases](https://github.com/YOUR_USERNAME/YOUR_REPO/releases) page.  
-Download the EXE installer, run it, and follow the setup. No compilation required.
+- **Points** — cameras, handles, accessories  
+- **Connectors** — rods, arms, monopods  
+- **Nodes** — joints, quick releases, mounts  
 
----
-
-## Features
-
-- **Rig schematic** — Points (counterweights), support (camera/grip), connectors (monopod, lens), nodes (quick releases, mounts). Everything is drawn on a canvas and wired into the calculation model.
-- **Calculation model** — Actual weight + perceived weight (hybrid operator and tendon model). Imbalance in percent and in grams.
-- **Load on nodes** — Color-coded risk levels, including inertia for fast walking.
-- **Work duration estimate** — Guidelines for novice (up to ~2 h) and experienced operator (up to ~8 h).
-- **Projects** — Save and load in `.rig` format; file association with the app on Windows.
-- **Export** — JPG (FHD) and vector PDF for drawings and reports.
-- **Multilingual UI** — 11 languages: English, Russian, German, Spanish, French, Portuguese, Italian, Polish, Ukrainian, Chinese, Japanese.
-- **Weight reminders** — On-screen hints when support point, points, or connectors have no weight entered.
+You can drag elements and instantly see how the rig balance changes.
 
 ---
 
-## System requirements
+### Center of mass calculation
 
-| Item | Requirement |
-|------|--------------|
-| **OS** | Windows 10 (x64) or newer |
-| **RAM** | 512 MB minimum (1 GB recommended) |
-| **Disk** | ~200 MB for installation |
-| **Display** | 1280×800 minimum (1920×1080 recommended for FHD export) |
-| **Mouse** | Required (drag, LMB/RMB) |
+The software calculates the **center of mass relative to the support point**.
 
-If your antivirus blocks save/open dialogs, the app can save to the Downloads folder and will suggest retrying. Adding the app to antivirus exclusions is recommended.
+This helps determine:
+
+- whether the rig will tip forward
+- how much torque acts on the operator
+- how balanced the setup is
 
 ---
 
-## Controls
+### Perceived weight calculation
 
-| Action | How |
-|--------|-----|
-| Create point | Left-click on canvas |
-| Create connector | Left-click on point → left-click on another point/support |
-| Create node on connector | Left-click on connector |
-| Move elements | Select “Move elements” → drag |
-| Delete element | Right-click on element |
-| Change connector length | Click connector → enter length → Ctrl+Enter |
-| Undo | Ctrl+Z |
-| Show/hide labels | Ctrl+R |
+Enginerig estimates the **perceived weight experienced by the operator**, not just the physical mass.
 
-You can open `.rig` files by double-clicking them or by dragging them into the app window.
+The model combines:
+
+- physical mass
+- center of mass displacement
+- biomechanical tendon model
+
+This allows estimating **operator fatigue during long shooting sessions**.
 
 ---
+
+### Rig imbalance estimation
+
+The program calculates rig imbalance as a percentage:
+
+| Imbalance | Meaning |
+|----------|--------|
+| 0–20% | Excellent balance |
+| 20–50% | Slight imbalance |
+| 50–100% | Noticeable tilt |
+| 100–200% | Heavy front/back pull |
+| 200%+ | Shoulder strap or support recommended |
+
+---
+
+### Load calculation on mounts and joints
+
+Enginerig calculates **load applied to nodes** such as:
+
+- quick release plates  
+- joints  
+- pivot points  
+- mounting adapters  
+
+This helps answer questions like:
+
+- *Will my quick release break?*  
+- *Is my mount overloaded?*  
+- *How much force acts on the joint during movement?*
+
+The software also includes **dynamic load simulation (+40%)** to approximate forces during walking.
+
+---
+
+### Real-time simulation
+
+All calculations update instantly when you:
+
+- move points
+- change weights
+- modify connectors
+- change the support point
+
+This allows quick experimentation with rig designs.
+
+---
+
+# Export
+
+Enginerig can export:
+
+- **Rig diagram** → JPG / PDF  
+- **Rig composition** → PDF  
+- **Rig data** → copy to clipboard  
+
+The exported composition includes:
+
+- all rig elements
+- weights
+- connector lengths
+- comments
+- construction relationships
+
+---
+
+# Internationalization
+
+Enginerig supports **11 languages**:
+
+- English
+- Russian
+- German
+- Spanish
+- French
+- Portuguese
+- Italian
+- Polish
+- Ukrainian
+- Chinese
+- Japanese
+
+---
+
+# Technology
+
+Enginerig is built with:
+
+- **Electron**
+- **HTML5 Canvas**
+- **JavaScript**
+- **KaTeX** (math formulas)
+- **jsPDF**
+- **html2canvas**
+
+---
+
+# File Format
+
+The file contains:
+
+- points
+- connectors
+- nodes
+- weights
+- support point
+- canvas position
+- project name
+
+The format is JSON-based.
+
+---
+
+# Typical Use Cases
+
+Enginerig can be used for:
+
+### Camera rig design
+
+Design a rig before physically assembling it.
+
+### Load calculation
+
+Estimate load on mounts, adapters, and joints.
+
+### Balance optimization
+
+Find the best position for accessories and handles.
+
+### Operator ergonomics
+
+Estimate how tiring the rig will be during shooting.
+
+### Educational purposes
+
+Understand physics concepts like:
+
+- center of mass
+- torque
+- load distribution
+
+---
+
+# Controls
+
+| Action | Method |
+|------|------|
+Create point | Left click on canvas |
+Create connector | Click point → click another point |
+Create node | Click connector |
+Move element | Drag |
+Delete element | Right click |
+Undo | Ctrl+Z |
+Hide labels | Ctrl+R |
+
+---
+
+# Why Enginerig Exists
+
+Camera rigs are often built by intuition.
+
+But heavy lenses, monopods, and accessories create complex torque systems.
+
+Enginerig provides a **simple engineering tool** to analyze these systems visually.
+
+Instead of guessing, you can **calculate rig balance and load before shooting**.
+
+---
+
+# License
+
+Open source project.
+
+---
+
+# Keywords (for search)
+
+camera rig calculator  
+rig balance calculator  
+camera rig weight distribution  
+center of mass calculator  
+camera mount load calculator  
+rig torque calculation  
+handheld camera ergonomics  
+monopod rig analysis
 
 ## License & credits
 
@@ -124,4 +281,18 @@ You can open `.rig` files by double-clicking them or by dragging them into the a
 
 ## Version
 
-1.05
+1.5.0
+---
+camera-rig
+rig-calculator
+rig-balance
+camera-rig-design
+center-of-mass
+weight-distribution
+camera-engineering
+filmmaking-tools
+camera-rig-analysis
+ergonomics
+physics-simulation
+camera-rig-calculator
+camera-mount-load
